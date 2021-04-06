@@ -1,5 +1,12 @@
-function fetchBooks() {
-  // To pass the tests, don't forget to return your fetch!
+function fetchBooks(webRespond) {
+  fetch('https://anapioficeandfire.com/api/books')
+.then(function(webRespond) {
+  console.log(webRespond);
+  return webRespond.json();
+})
+.then(function(json) {
+  console.log(json);
+});
   
 }
 
@@ -15,3 +22,4 @@ function renderBooks(books) {
 document.addEventListener('DOMContentLoaded', function() {
   fetchBooks();
 });
+
